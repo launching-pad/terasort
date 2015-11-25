@@ -1,0 +1,10 @@
+dependencies:
+  - recipe: terasort::install
+  - recipe: terasort::experiment
+    local:
+      - terasort::install
+    global:
+      - generator::experiment
+      - flink::taskmanager
+
+
