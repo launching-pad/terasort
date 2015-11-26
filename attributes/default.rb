@@ -3,5 +3,5 @@
 default[:terasort][:group] = "vagrant"
 default[:terasort][:user] = "vagrant"
 
-default[:terasort][:partitions] = "2"
+default[:flink][:partitions] = "2"
 
