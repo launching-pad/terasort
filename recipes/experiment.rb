@@ -8,7 +8,7 @@ script 'run_experiment' do
 echo "hello"
 mkdir /srv/teragen_jar
 wget https://s3-eu-west-1.amazonaws.com/karamel/terasort_2.10-0.0.1.jar
-/usr/local/flink-0.9.1/bin/flink run -p 2 -m 172.28.128.5:6123 -c eastcircle.terasort.FlinkTeraSort /tmp/terasort_2.10-0.0.1.jar hdfs://172.28.128.5:8020 /srv/teragen/ /terasortOuttt 2 true true
+/usr/local/flink-0.9.1/bin/flink run -p #{node[:flink][:partitions]} -m 172.28.128.5:6123 -c eastcircle.terasort.FlinkTeraSort /tmp/terasort_2.10-0.0.1.jar hdfs://172.28.128.5:8020 /srv/teragen/ /terasortOut #{node[:flink][:partitions]} true true
   EOM
 end
 
