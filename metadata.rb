@@ -27,4 +27,8 @@ attribute "terasort/user",
 :description => "user parameter value",
 :type => "string"
 
+attribute "flink/partitions",
+:descriptions => "partitions for flink"
+:type => "string"
+
 
