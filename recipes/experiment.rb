@@ -6,7 +6,6 @@ script 'run_experiment' do
   interpreter "bash"
   code <<-EOM
 echo "hello"
-mkdir /srv/teragen_jar
 wget https://s3-eu-west-1.amazonaws.com/karamel/terasort_2.10-0.0.1.jar
 /usr/local/flink-0.9.1/bin/flink run -p #{node[:flink][:partitions]} -m #{node.terasort.experiment.public_ips[0]}:6123 -c eastcircle.terasort.FlinkTeraSort /tmp/terasort_2.10-0.0.1.jar hdfs://#{node.terasort.experiment.public_ips[0]}:8020 /srv/teragen/ /terasortOut #{node[:flink][:partitions]} true true
   EOM
