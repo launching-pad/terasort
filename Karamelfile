@@ -6,5 +6,6 @@ dependencies:
     global:
       - generator::experiment
       - flink::taskmanager
+      - teragen::experiment
 
 
