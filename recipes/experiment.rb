@@ -5,9 +5,7 @@ script 'run_experiment' do
   group node['terasort']['group']
   interpreter "bash"
   code <<-EOM
-echo "hello"
-wget https://s3-eu-west-1.amazonaws.com/karamel/terasort_2.10-0.0.1.jar
-/usr/local/flink/bin/flink run -p #{node[:flink][:partitions]} -m #{node.terasort.experiment.private_ips[0]}:6123 -c eastcircle.terasort.FlinkTeraSort /tmp/terasort_2.10-0.0.1.jar hdfs://#{node.terasort.experiment.private_ips[0]}:8020 /srv/teragen/ /terasortFlink #{node[:flink][:partitions]} true true
+/srv/hadoop-2.4.0/bin/hadoop jar /srv/hadoop-2.4.0/share/hadoop/mapreduce/hadoop-mapreduce-examples-2.4.0.jar terasort /srv/teragen /srv/teragen/output
   EOM
 end
 
