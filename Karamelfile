@@ -4,8 +4,6 @@ dependencies:
     local:
       - terasort::install
     global:
-      - generator::experiment
-      - flink::taskmanager
       - teragen::experiment
 
 
