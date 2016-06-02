@@ -1,6 +1,6 @@
 name             'terasort'
 maintainer       "terasort"
-maintainer_email "ashansa.perera@gmail.com"
+maintainer_email "shelanrc@gmail.com"
 license          "Apache v2.0"
 description      'Installs/Configures/Runs terasort'
 version          "0.1"
@@ -27,8 +27,5 @@ attribute "terasort/user",
 :description => "user parameter value",
 :type => "string"
 
-attribute "flink/partitions",
-:descriptions => "partitions for flink",
-:type => "string"
 
 
